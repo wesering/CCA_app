@@ -55,7 +55,11 @@
      <string name="venue">Venue</string>
      <string name="date">Date</string>
      <string name="time">Time</string>
-     <string name="actors_name">Actors and Entertainers</string>
+     <string name="mm">MM</string>
+     <string name="dd">DD</string>
+     <string name="yy">YY</string>
+     <string name="hh">HH</string>
+    
      <!-- see strings for edit profile page for confirm -->
      
      <!-- string array for list on talent page -->

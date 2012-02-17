@@ -37,6 +37,9 @@
         <activity 
             	android:name=".InfoDisplayPage">   
         </activity>
+        <activity 
+            	android:name=".BookEntertainerPage">   
+        </activity>
         <!-- ################################################ -->
         <!-- ################################################ -->
     </application>

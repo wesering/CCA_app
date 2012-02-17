@@ -30,7 +30,6 @@ public class CCA extends Activity {
         loginButton.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
 				Intent talentList = new Intent(getApplicationContext(), TalentsList.class);	
 				startActivity(talentList);
 			}
