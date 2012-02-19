@@ -40,10 +40,6 @@
      <!-- strings for venues page -->
      <string name="venues">Venues</string>
      
-     <!-- strings for view venue page -->
-     <string name="view_venue">View Venue</string>
-     <string name="save">Save</string>
-     
      <!-- strings for view profile page -->
      <string name="view_profile">View Profile</string>
      <string name="description">Description:</string>
@@ -52,14 +48,15 @@
      <!-- strings for Book entertainer page -->
      <string name="book_entertainer">Book Entertainer</string>
      <string name="ticket_price">Ticket Price</string>
+     <string name="ticket_price_hint">XX.XX</string>
      <string name="venue">Venue</string>
-     <string name="date">Date</string>
-     <string name="time">Time</string>
-     <string name="mm">MM</string>
-     <string name="dd">DD</string>
-     <string name="yy">YY</string>
-     <string name="hh">HH</string>
-    
+     <string name="venue_hint">Name of Venue</string>
+     <string name="choose_date">Choose Date</string>
+     <string name="choose_time">Choose Time</string>
+     <string name="choose_hour">Choose hour</string>
+     <string name="choose_minute">Choose minute</string>
+     <string name="choose_ampm">Choose AM / PM</string>
+     
      <!-- see strings for edit profile page for confirm -->
      
      <!-- string array for list on talent page -->

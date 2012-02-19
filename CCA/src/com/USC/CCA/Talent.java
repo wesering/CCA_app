@@ -16,8 +16,8 @@ public class Talent extends ListActivity {
 	private String desc;
 	private ImageView image;
 	private int imageId;
-	
 	String array_list;
+	
 	 /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
