@@ -89,42 +89,16 @@ public class Register extends Activity {
     	
     	String encryptHash = Encrypt(inputPassword);
     	
-    	ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-    	nameValuePairs.add(new BasicNameValuePair("iname",inputName));
-    	nameValuePairs.add(new BasicNameValuePair("iaddress",inputAddress));
-    	nameValuePairs.add(new BasicNameValuePair("iemail",inputEmail));
-    	nameValuePairs.add(new BasicNameValuePair("iphone",inputPhone));
-    	nameValuePairs.add(new BasicNameValuePair("iuser",inputUsername));
-    	nameValuePairs.add(new BasicNameValuePair("ipass",encryptHash));
+    	Query insertQuery = new Query();
     	
-    	InputStream is = null;
-    	 
-    	//http post
-    	try{
-    	        HttpClient httpclient = new DefaultHttpClient();
-    	        HttpPost httppost = new HttpPost("http://ccagency.99k.org/newuser.php");
-    	        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-    	        HttpResponse response = httpclient.execute(httppost);
-    	        HttpEntity entity = response.getEntity();
-    	        is = entity.getContent();
-    	}catch(Exception e){
-    		    String out = e.toString();
-    	        Log.e("log_tag", "Error in http connection "+e.toString());
-    	}
-    	//convert response to string
-    	try{
-    	        BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
-    	        StringBuilder sb = new StringBuilder();
-    	        String line = null;
-    	        while ((line = reader.readLine()) != null) {
-    	                sb.append(line + "\n");
-    	        }
-    	        is.close();
-    	 
-    	        result=sb.toString();
-    	}catch(Exception e){
-    	        Log.e("log_tag", "Error converting result "+e.toString());
-    	}
+    	insertQuery.addValuePair("iname",inputName);
+    	insertQuery.addValuePair("iaddress",inputAddress);
+    	insertQuery.addValuePair("iemail",inputEmail);
+    	insertQuery.addValuePair("iphone",inputPhone);
+    	insertQuery.addValuePair("iuser",inputUsername);
+    	insertQuery.addValuePair("ipass",encryptHash);
+    	
+    	result = insertQuery.dispatchQuery("newuser.php");
     	 
         Intent debug = new Intent(getApplicationContext(), Debug.class);
         Bundle b = new Bundle();
