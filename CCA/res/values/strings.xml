@@ -10,14 +10,20 @@
     <string name="icon_app_name">CCA</string>
     <string name="Username">Username</string>
     <string name="Password">Password</string>
+    <string name="retype_password">Retype Password</string>
     <string name="Login">Login</string>
     <string name="Register">Register</string>
     <string name="Forget_Password">Forget Password?</string>
     
      <!-- strings for register page -->
     <string name="register_name">Register</string>
+    <string name="next">Next</string>
     <string name="text_name">Name</string>
     <string name="address">Address</string>
+    <string name="address_line_2">Line 2</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="zip">zip</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="cancel">Cancel</string>

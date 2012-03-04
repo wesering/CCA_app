@@ -42,7 +42,7 @@ public class Register extends Activity {
         
     //Listening to cancel button and quit to last screen if pressed
     Button cancelButton = (Button) findViewById(R.id.cancelButton);
-    Button registerButton = (Button) findViewById(R.id.registerButton);
+    Button nextButton = (Button) findViewById(R.id.nextButton);
     
     cancelButton.setOnClickListener(new View.OnClickListener() {
 		public void onClick(View arg0) {
@@ -50,10 +50,13 @@ public class Register extends Activity {
 		}
 	}); // end of onClickListener
     
-    registerButton.setOnClickListener(new View.OnClickListener() {
+    nextButton.setOnClickListener(new View.OnClickListener() {
     	public void onClick(View arg0) {
-    		sendInsertQuery();
-    		finish();
+			Intent reg_name_pass = new Intent(getApplicationContext(), Register_name_pass.class);	
+			startActivity(reg_name_pass);			
+    		
+    		//sendInsertQuery();
+    		//finish();
     	}
     }); // end of onClickListener
     
@@ -67,8 +70,8 @@ public class Register extends Activity {
     	TextView addressText = (TextView) findViewById(R.id.address_field);
     	TextView emailText = (TextView) findViewById(R.id.email_field);
     	TextView phoneText = (TextView) findViewById(R.id.phone_field);
-    	TextView usernameText = (TextView) findViewById(R.id.username_field);
-    	TextView passwordText = (TextView) findViewById(R.id.pswd_field);
+    	//TextView usernameText = (TextView) findViewById(R.id.username_field);
+    	//TextView passwordText = (TextView) findViewById(R.id.pswd_field);
     	
     	String inputName = nameText.getText().toString();
     	String inputAddress = addressText.getText().toString();
@@ -84,10 +87,10 @@ public class Register extends Activity {
     	
     	//TODO: Build query to check if the supplied username already exists
     	
-    	String inputUsername = usernameText.getText().toString();
-    	String inputPassword = passwordText.getText().toString();
+    	//String inputUsername = usernameText.getText().toString();
+    	//String inputPassword = passwordText.getText().toString();
     	
-    	String encryptHash = Encrypt(inputPassword);
+    	//String encryptHash = Encrypt(inputPassword);
     	
     	Query insertQuery = new Query();
     	
@@ -95,8 +98,8 @@ public class Register extends Activity {
     	insertQuery.addValuePair("iaddress",inputAddress);
     	insertQuery.addValuePair("iemail",inputEmail);
     	insertQuery.addValuePair("iphone",inputPhone);
-    	insertQuery.addValuePair("iuser",inputUsername);
-    	insertQuery.addValuePair("ipass",encryptHash);
+    	//insertQuery.addValuePair("iuser",inputUsername);
+    	//insertQuery.addValuePair("ipass",encryptHash);
     	
     	result = insertQuery.dispatchQuery("newuser.php");
     	 

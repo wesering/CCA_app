@@ -40,6 +40,9 @@
         <activity 
             	android:name=".BookEntertainerPage">   
         </activity>
+        <activity 
+            	android:name=".Register_name_pass">   
+        </activity>
         <!-- ################################################ -->
         <!-- ################################################ -->
     </application>
