@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <ImageView
+        android:id="@+id/logo"
+        android:contentDescription="@string/desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="25dp"      
+        android:src="@drawable/cca_logo" />  
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:hint="@string/Username"
+        android:inputType="text" 
+        android:layout_below="@+id/logo" />     
+    <EditText
+        android:id="@+id/pswd"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:hint="@string/Password"
+        android:inputType="textPassword" 
+        android:layout_below="@+id/username"/> 
+<RelativeLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/pswd">
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/Login" />
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/loginButton"
+        android:text="@string/Register" />
+    <TextView
+        android:id="@+id/pswdRecovery" 
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+        android:layout_below="@+id/loginButton"
+        android:textColor="#ff0000" 
+        android:layout_marginTop="15dp"
+        android:text="@string/Forget_Password" />
+   </RelativeLayout>
+</RelativeLayout>

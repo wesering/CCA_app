@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/entertainer_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <TableRow>
+
+           <TextView
+                android:layout_weight="0.2"
+                android:text="@string/venue"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ffffff" />
+
+            <EditText
+                android:id="@+id/venue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/venue_hint"
+                android:layout_weight="0.5"
+                android:inputType="textMultiLine" />
+            
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_weight="0.2"
+                android:text="@string/ticket_price"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ffffff" />
+
+            <EditText
+                android:id="@+id/ticket_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/ticket_price_hint"
+                android:layout_weight="0.5"
+                android:inputType="textMultiLine" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/datePicker1"
+        android:layout_alignLeft="@+id/confirm_button"
+        android:layout_marginBottom="17dp"
+        android:text="@string/choose_date"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+     <DatePicker
+        android:id="@+id/datePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/confirm_button"
+        android:layout_below="@+id/datePicker1"
+        android:layout_marginTop="14dp"
+        android:text="@string/choose_time"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+	<TableLayout
+	    android:id="@+id/tableLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_alignTop="@+id/time_text" >
+
+		<TableRow>
+
+		    <Spinner
+		        android:id="@+id/hour_spinner"
+		        android:layout_width="80dp"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:prompt="@string/choose_hour" />
+
+		    <Spinner
+		        android:id="@+id/minute_spinner"
+		        android:layout_width="80dp"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:prompt="@string/choose_minute" />
+
+		    <Spinner
+		        android:id="@+id/ampm_spinner"
+		        android:layout_width="90dp"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:prompt="@string/choose_ampm" />
+		</TableRow>
+
+    </TableLayout>
+     <Button
+        android:id="@+id/confirm_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:onClick="onClick"
+        android:text="@string/confirm" />
+
+</RelativeLayout>

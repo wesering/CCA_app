@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- content description string -->
+    <string name="desc">CCA Digital Entertainment</string>
+    
+    <!-- strings for login page -->
+    <string name="hello">Hello World, CCA!</string>
+    <string name="app_name">Capital Connections Agency</string>
+    <string name="icon_app_name">CCA</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="Register">Register</string>
+    <string name="Forget_Password">Forget Password?</string>
+    
+     <!-- strings for register page -->
+    <string name="register_name">Register</string>
+    <string name="text_name">Name</string>
+    <string name="address">Address</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="cancel">Cancel</string>
+    
+     <!-- ############ MAIN PAGE ################### -->
+     <!-- strings for talents page  -->
+     <string name="title_name">Talents</string>
+     <string name="edit_profile">Edit Profile</string>
+     <string name="logout">Logout</string>
+     <string name="talents">Talents</string>
+     <!-- ############ MAIN PAGE ################### -->
+     
+     <!--  strings for edit profile page -->
+     <string name="change_password">Change Password</string>
+     <string name="current">Current</string>
+     <string name="new_password">New</string>
+     <string name="confirm">Confirm</string>
+     <string name="submit">Submit</string>
+     
+     <!-- strings for venues page -->
+     <string name="venues">Venues</string>
+     
+     <!-- strings for view profile page -->
+     <string name="view_profile">View Profile</string>
+     <string name="description">Description:</string>
+     <string name="book">Book Entertainer</string>
+     
+     <!-- strings for Book entertainer page -->
+     <string name="book_entertainer">Book Entertainer</string>
+     <string name="ticket_price">Ticket Price</string>
+     <string name="ticket_price_hint">XX.XX</string>
+     <string name="venue">Venue</string>
+     <string name="venue_hint">Name of Venue</string>
+     <string name="choose_date">Choose Date</string>
+     <string name="choose_time">Choose Time</string>
+     <string name="choose_hour">Choose hour</string>
+     <string name="choose_minute">Choose minute</string>
+     <string name="choose_ampm">Choose AM / PM</string>
+     
+     <!-- see strings for edit profile page for confirm -->
+     
+     <!-- string array for list on talent page -->
+    <string-array name="talents_array">
+        <item>Actors and Actresses</item>
+        <item>Recording Artists</item>
+        <item>Motivational Speakers</item>
+        <item>Comedy</item>        
+    </string-array>
+    
+</resources>
