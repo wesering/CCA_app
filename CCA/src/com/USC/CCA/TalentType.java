@@ -50,7 +50,13 @@ public class TalentType{
 			public void run(){
 				synchronized(contactArray){
 					String json = q.dispatchQuery(QUERY_PAGE);
-					contactArray = g.fromJson(json, Contact_info[].class);
+					if(!json.equalsIgnoreCase("null\n")){
+						contactArray = g.fromJson(json, Contact_info[].class);
+					}
+					else{
+						Contact_info[] empty = {};
+						contactArray = empty;
+					}
 					pd.dismiss();
 				}
 			}
