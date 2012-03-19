@@ -1,8 +1,23 @@
 package com.USC.CCA;
 
-public class TalentType {
+import com.google.gson.Gson;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.Handler;
+import android.os.Message;
+
+public class TalentType{
+	private static final String QUERY_PAGE = "talent.php";
+	private static Contact_info[] contactArray = {};
+	private static Query q;
+	private static Gson g;
+	public static ProgressDialog pd;
 	
 	public TalentType() {
+		q = new Query();
+		q.addValuePair("type", "");
+		g = new Gson();
 		//******************************************************
 		// Populate the arrays here dynamically with the website
 		//******************************************************
@@ -18,17 +33,29 @@ public class TalentType {
 	
 	//****************************************************************************
 	//****************************************************************************
-	static String[] talentArray;
-	String[] comedians = {"Mitch Hedenburg", "Jack Black", "Chris Rock"};
+	/*String[] comedians = {"Mitch Hedenburg", "Jack Black", "Chris Rock"};
 	String[] actors = {"Ed Norton", "Katy Perry", "Scarlett Johansson"};
 	String[] speakers = {"Steve Jobs", "Lou Dobbs", "Sean Hannity"};
-	String[] musicians = {"The Beatles", "Misfits", "Eminem", "Bloodhound Gang"};
+	String[] musicians = {"The Beatles", "Misfits", "Eminem", "Bloodhound Gang"};*/
 	//****************************************************************************
 	//****************************************************************************
 	
 	// populate talentArray
-	public void setTalentArray(String t) {
-		if(t.equalsIgnoreCase("Actors and Actresses")) {
+	public void setTalentArray(String t, Activity a) {
+		q.setValue("type", t);
+		
+		pd = ProgressDialog.show(a, "", "Loading. Please wait...", true);
+		
+		new Thread(){
+			public void run(){
+				synchronized(contactArray){
+					String json = q.dispatchQuery(QUERY_PAGE);
+					contactArray = g.fromJson(json, Contact_info[].class);
+					pd.dismiss();
+				}
+			}
+		}.start();
+		/*if(t.equalsIgnoreCase("Actors and Actresses")) {
 			talentArray = actors;
 		}
 		else if(t.equalsIgnoreCase("Recording Artists")) {
@@ -39,11 +66,13 @@ public class TalentType {
 		}
 		else if(t.equalsIgnoreCase("Comedy")) {
 			talentArray = comedians;
-		}
+		}*/
 	}
 	
-	public String[] getTalent() {
-		// fetch the array list for the display
-	   	return talentArray;
+	public static Contact_info[] getTalent() {
+		// fetch the array list for the display  	
+	   	synchronized(contactArray){
+	   		return contactArray;
+	   	}
 	}
 }

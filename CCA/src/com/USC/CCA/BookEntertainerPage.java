@@ -17,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class BookEntertainerPage extends Activity implements DatePicker.OnDateChangedListener, OnItemSelectedListener {
+	private String name;
+	
 	public BookEntertainerPage() {
 		// Default constructor
 	}
@@ -44,6 +46,8 @@ public class BookEntertainerPage extends Activity implements DatePicker.OnDateCh
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.book_entertainer);
+		
+		name = getIntent().getStringExtra("name");
 		
 		// Date picker 
 		date = (DatePicker)findViewById(R.id.datePicker1);
@@ -116,7 +120,7 @@ public class BookEntertainerPage extends Activity implements DatePicker.OnDateCh
 		
 		// New Textview for artist name
 		TextView tv = (TextView)findViewById(R.id.entertainer_name);
-		tv.setText(Contact_info.artistName);
+		tv.setText("name");//TODO
 		tv.setTextSize(30);
 		tv.setTextColor(0xff00ff00);
 		tv.setTypeface(null, 0x00000002);		
@@ -183,7 +187,7 @@ public class BookEntertainerPage extends Activity implements DatePicker.OnDateCh
 		text = ( new StringBuilder()
 					.append("User : ").append("Defualt_user\n\n").append("From : ").append(venue_string)
 					.append("\n\n").append("Has requested : ")
-					.append(Contact_info.artistName).append("\n\nFor : ").append(String.valueOf(mMonth))
+					.append("name").append("\n\nFor : ").append(String.valueOf(mMonth))//TODO
 					.append(" - ").append(String.valueOf(mDay)).append(" - ").append(String.valueOf(mYear))
 					.append("\n\n").append("At : ").append(h).append(":").append(m).append(" ").append(am_pm)
 					.append("\n\n").append("Ticket Price : $").append(ticketPrice)
