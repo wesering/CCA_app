@@ -1,11 +1,9 @@
 package com.USC.CCA;
 
-import com.google.gson.Gson;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.os.Handler;
-import android.os.Message;
+
+import com.google.gson.Gson;
 
 public class TalentType{
 	private static final String QUERY_PAGE = "talent.php";

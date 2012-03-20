@@ -3,6 +3,7 @@ package com.USC.CCA;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -48,6 +49,7 @@ public class InfoDisplayPage extends Activity {
 		
 		// Text View 2 for description
 		TextView tv2 = (TextView)findViewById(R.id.entertainer_description);
+		tv2.setMovementMethod(LinkMovementMethod.getInstance());
 		tv2.setText(desc);
 		tv2.setTextSize(15);
 		tv2.setTextColor(0xffcccccc);
