@@ -1,6 +1,7 @@
 package com.USC.CCA;
 
 import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class TalentsList extends ListActivity {
-	
-	public String[] tArray = {};
 	
 	 /** Called when the activity is first created. */
     @Override
@@ -33,14 +32,9 @@ public class TalentsList extends ListActivity {
     	String keyword = o.toString();
     	
     	
-    	if(!keyword.isEmpty()) { 		
-    		
-    		// Create a TalentType object
+    	if(!keyword.isEmpty()) {
     		TalentType talentType = new TalentType();
-    		
-    		// set up the array to use in Talent.java
-    		talentType.setTalentArray(keyword);
-    		tArray = talentType.getTalent();
+    		talentType.setTalentArray(keyword, this);
     		
     		// Create the intent
     		Intent talent = new Intent(getApplicationContext(), Talent.class);

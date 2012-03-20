@@ -70,7 +70,13 @@
         <item>Actors and Actresses</item>
         <item>Recording Artists</item>
         <item>Motivational Speakers</item>
-        <item>Comedy</item>        
+        <item>Comedians</item>
+        <item >Athletes</item>
+        <item >R&amp;B/Pop</item>
+        <item >Country</item>
+        <item >Rock/Pop</item>
+        <item >Gospel</item>
+        <item >Rappers</item>        
     </string-array>
     
 </resources>
