@@ -28,6 +28,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CCA extends Activity {
 	
@@ -45,6 +46,9 @@ public class CCA extends Activity {
 	private String previousUsername = "";
 	private String response = "";
 	
+	//bool to check for errors
+	private boolean stop;
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,9 @@ public class CCA extends Activity {
         loginButton.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View arg0) {
+				
+		        //Reset flag after each time login button is clicked
+		        stop = false;
 				
 		        // Set the user info as strings
 		        EditText Uname = (EditText) findViewById(R.id.username);
@@ -88,10 +95,12 @@ public class CCA extends Activity {
 				//Possibly add a method in the query dispatch which validates the user's credentials after each dispatch
 				
 				//Auto populate the identity for further testing.
-				
-				if (login.mUser != "") {
-					Intent talentList = new Intent(getApplicationContext(), TalentsList.class);	
-					startActivity(talentList);
+				if (stop == false)
+				{
+					if (login.mUser != "") {
+						Intent talentList = new Intent(getApplicationContext(), TalentsList.class);	
+						startActivity(talentList);
+					}
 				}
 			}
 			
@@ -119,7 +128,7 @@ public class CCA extends Activity {
     	}
     	else 
     	{
-    		publishError(inData);
+    		publishMessage(inData);
     	}
     }
     
@@ -186,9 +195,17 @@ public class CCA extends Activity {
     	Intent debug = new Intent(getApplicationContext(), Debug.class);
     	debug.putExtras(b);
     	startActivity(debug);
+    	
+    	stop = true;
     }
     
     private void publishMessage(String message) {   	
+    	
+    	if (message.contains("Login failed")) {
+    		Toast.makeText(this, "Login failed. Please try again.", Toast.LENGTH_LONG).show();
+    		stop = true;
+    		return;
+    	}
     	
     	Bundle b = new Bundle();
     	b.putString("out", message);
@@ -196,6 +213,8 @@ public class CCA extends Activity {
     	Intent debug = new Intent(getApplicationContext(), Debug.class);
     	debug.putExtras(b);
     	startActivity(debug);
+    	
+    	stop = true;
     }
     
     private String Encrypt(String in)

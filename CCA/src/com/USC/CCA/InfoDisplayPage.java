@@ -103,13 +103,6 @@ public class InfoDisplayPage extends Activity {
 		tv.setTextColor(0xff00ff00);
 		tv.setTypeface(null, 0x00000002);
 		
-		// New image view for artist name
-		ImageView im = (ImageView)findViewById(R.id.image);
-		im.setImageDrawable(this.getResources().getDrawable(R.drawable.em));
-		
-		// Text View 2 for description
-		TextView tv2 = (TextView)findViewById(R.id.entertainer_description);
-		tv2.setMovementMethod(LinkMovementMethod.getInstance());
 		// Put the image on the screen
 		Bitmap bitmap = DownloadImage("http://www.ccagency.99k.org/celebrities_photos/" + urlFetchedImageString.toLowerCase());
 		ImageView im = (ImageView) findViewById(R.id.image);
@@ -120,6 +113,7 @@ public class InfoDisplayPage extends Activity {
 		ImageView im = (ImageView)findViewById(R.id.image);
 		im.setImageDrawable(this.getResources().getDrawable(R.drawable.em));
 */		
+		
 		// Text View 2 for description
 		TextView tv2 = (TextView)findViewById(R.id.entertainer_description);
 		tv2.setText(desc);

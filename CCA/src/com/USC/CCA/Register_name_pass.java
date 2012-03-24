@@ -13,7 +13,7 @@ public class Register_name_pass extends Activity {
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.register_uname_pass); 
+	        //setContentView(R.layout.register_uname_pass); 
 	        
 	        //Listening to cancel button and quit to last screen if pressed
 	        Button cancelButton = (Button) findViewById(R.id.cancelButton);
